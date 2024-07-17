@@ -9,14 +9,11 @@ class ArticleAPI extends ArticleRepository
   Future<List<ArticleModel>> getAllArticles() async{
     List<ArticleModel> articles=[];
     try{
-      print('API called');
       var response= await Dio().get('https://newsapi.org/v1/articles?source=the-next-web&apiKey=1c0f731cca954a13875e6965f9c7e9de');
-      print (response.data);
       var data=response.data['articles'] as List;
       articles = data.map((article)=> ArticleModel.fromJson(article)).toList();
     }
-    catch(e)
-    {
+    catch(e){
       print(e);
     }
     return articles;

@@ -1,4 +1,3 @@
-import 'package:link_dev_app/repositories/articles/article_api.dart';
 
 import '../models/article_model.dart';
 
