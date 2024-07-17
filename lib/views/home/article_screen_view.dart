@@ -18,6 +18,25 @@ class ArticleScreenView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[100],
+      appBar: AppBar(
+        actions: [
+          IconButton(
+            icon: const ImageIcon(AssetImage('assets/images/search.png')),
+            onPressed: () {},
+          ),
+        ],
+        foregroundColor: Colors.white,
+        backgroundColor: Colors.grey[900],
+        title: Text(
+          'LINK DEVELOPMENT',
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 18,
+          ),
+        ),
+      ),
+
       body: SingleChildScrollView(
         child: Column(
           children: [
