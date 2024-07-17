@@ -3,6 +3,7 @@ import 'package:link_dev_app/view_models/article_view_model.dart';
 import 'package:link_dev_app/view_models/home_view_model.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:link_dev_app/views/home/article_view.dart';
+import 'package:link_dev_app/views/home/drawer_view.dart';
 import '../../repositories/articles/article_api.dart';
 import 'package:intl/intl.dart';
 
@@ -33,15 +34,14 @@ class HomeScreenView extends StatelessWidget {
         ),
         ),
       ),
-      drawer: !kIsWeb? const Drawer(
-        child: Center(child: Text('Drawer to be added here')),
-      ):null,
+      drawer: !kIsWeb? const Drawer(child: DrawerView()):null,
       body: Center(
         child: Row(
           children: [
             if (kIsWeb)
               Container(
-                width: 150,
+                width: 200,
+                child: const DrawerView(),
               ),
             Expanded(
               child: FutureBuilder<List<ArticleViewModel>>(
