@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:link_dev_app/view_models/article_view_model.dart';
+
 class ArticleView extends StatelessWidget {
   final bool isScreen;
   final String title;
@@ -12,7 +12,7 @@ class ArticleView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.white,
       ),
       child: Column(
@@ -39,16 +39,16 @@ class ArticleView extends StatelessWidget {
             ],
           ),
           Padding(
-            padding: EdgeInsets.only(top:10.0, bottom: 5.0, left: 16.0),
+            padding: const EdgeInsets.only(top:10.0, bottom: 5.0, left: 16.0),
             child: Text(title,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 18,
               color: Colors.black,
             ),
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(bottom: 5.0, left: 16.0),
+            padding: const EdgeInsets.only(bottom: 5.0, left: 16.0),
             child: Text('By $author',
             style: TextStyle(
               fontSize: 12,
@@ -58,7 +58,7 @@ class ArticleView extends StatelessWidget {
           ),
           isScreen && description!=null?
                     Padding(
-            padding: EdgeInsets.only(bottom: 5.0, left: 16.0),
+            padding: const EdgeInsets.only(bottom: 5.0, left: 16.0),
             child: Text(description!,
             style: TextStyle(
               fontSize: 12,
@@ -71,7 +71,7 @@ class ArticleView extends StatelessWidget {
           Align(
             alignment: Alignment.centerRight,
             child: Padding(
-            padding: EdgeInsets.only(right: 16.0),
+            padding: const EdgeInsets.only(right: 16.0),
               child: Text(date,
               style: TextStyle(
                 fontSize: 11,

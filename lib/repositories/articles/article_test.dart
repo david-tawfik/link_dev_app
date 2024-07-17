@@ -7,7 +7,6 @@ class ArticleTest extends ArticleRepository {
   Future<List<ArticleModel>> getAllArticles() async {
     List<ArticleModel> articles = [];
     try {
-      print('API called');
       var response = {
         "status": "ok",
         "source": "the-next-web",
@@ -98,7 +97,6 @@ class ArticleTest extends ArticleRepository {
           }
         ]
       };
-      print(response);
       var data = response['articles'] as List;
       articles = data.map((article) => ArticleModel.fromJson(article)).toList();
     } catch (e) {
