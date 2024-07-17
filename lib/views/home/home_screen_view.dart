@@ -41,16 +41,16 @@ class HomeScreenView extends StatelessWidget {
       body: Center(
         child: Row(children: [
           if (kIsWeb)
-            Container(
+            const SizedBox(
               width: 200,
-              child: const DrawerView(),
+              child: DrawerView(),
             ),
           Expanded(
             child: FutureBuilder<List<ArticleViewModel>>(
               future: homeViewModel.getAllArticles(),
               builder: (context, snapshot) => snapshot.connectionState ==
                       ConnectionState.waiting
-                  ? CircularProgressIndicator()
+                  ? const CircularProgressIndicator()
                   : GridView.count(
                       crossAxisCount: isMobile(context)
                           ? 1
@@ -59,7 +59,7 @@ class HomeScreenView extends StatelessWidget {
                               : 2,
                       children: List.generate(snapshot.data!.length, (index) {
                         return Padding(
-                          padding: EdgeInsets.all(12.0),
+                          padding: const EdgeInsets.all(12.0),
                           child: InkWell(
                             onTap: () {
                               Navigator.push(

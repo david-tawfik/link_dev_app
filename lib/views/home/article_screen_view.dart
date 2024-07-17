@@ -36,6 +36,7 @@ class ArticleScreenView extends StatelessWidget {
           ),
         ),
       ),
+
       body: SingleChildScrollView(
         child: Column(
           children: [
